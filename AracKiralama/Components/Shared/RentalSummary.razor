@@ -1,0 +1,68 @@
+﻿@using AracKiralama.Models
+
+<div class="rental-summary">
+    <h3>Fiyat Özeti</h3>
+
+    @if (Car is not null)
+    {
+        <div class="summary-row">
+            <span>Araç Günlük Ücreti</span>
+            <strong>@Car.DailyPrice.ToString("N0") TL</strong>
+        </div>
+
+        @if (RentalDays > 0)
+        {
+            <div class="summary-row">
+                <span>Kiralama Süresi</span>
+                <strong>@RentalDays gün</strong>
+            </div>
+        }
+
+        @if (ExtraIds.Contains("insurance"))
+        {
+            <div class="summary-row">
+                <span>Tam Kasko</span>
+                <strong>250 TL / gün</strong>
+            </div>
+        }
+
+        @if (ExtraIds.Contains("child-seat"))
+        {
+            <div class="summary-row">
+                <span>Çocuk Koltuğu</span>
+                <strong>75 TL / gün</strong>
+            </div>
+        }
+
+        @if (ExtraIds.Contains("extra-driver"))
+        {
+            <div class="summary-row">
+                <span>Ek Sürücü</span>
+                <strong>150 TL / gün</strong>
+            </div>
+        }
+
+        <div class="summary-total">
+            <span>Toplam Tutar</span>
+            <strong>@TotalAmount.ToString("N0") TL</strong>
+        </div>
+
+        <p class="summary-note">
+            Toplam tutar, kiralama günü ve seçilen ek hizmetlere göre hesaplanır.
+        </p>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public Car? Car { get; set; }
+
+    [Parameter]
+    public int RentalDays { get; set; }
+
+    [Parameter]
+    public List<string> ExtraIds { get; set; } = new();
+
+    [Parameter]
+    public decimal TotalAmount { get; set; }
+}

@@ -1,0 +1,1122 @@
+/* /Components/Layout/MainLayout.razor.rz.scp.css */
+#blazor-error-ui[b-h59tmhcc0t] {
+    color-scheme: light only;
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss[b-h59tmhcc0t] {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
+/* /Components/Layout/ReconnectModal.razor.rz.scp.css */
+.components-reconnect-first-attempt-visible[b-6r1x6szcwe],
+.components-reconnect-repeated-attempt-visible[b-6r1x6szcwe],
+.components-reconnect-failed-visible[b-6r1x6szcwe],
+.components-pause-visible[b-6r1x6szcwe],
+.components-resume-failed-visible[b-6r1x6szcwe],
+.components-rejoining-animation[b-6r1x6szcwe] {
+    display: none;
+}
+
+#components-reconnect-modal.components-reconnect-show .components-reconnect-first-attempt-visible[b-6r1x6szcwe],
+#components-reconnect-modal.components-reconnect-show .components-rejoining-animation[b-6r1x6szcwe],
+#components-reconnect-modal.components-reconnect-paused .components-pause-visible[b-6r1x6szcwe],
+#components-reconnect-modal.components-reconnect-resume-failed .components-resume-failed-visible[b-6r1x6szcwe],
+#components-reconnect-modal.components-reconnect-retrying[b-6r1x6szcwe],
+#components-reconnect-modal.components-reconnect-retrying .components-reconnect-repeated-attempt-visible[b-6r1x6szcwe],
+#components-reconnect-modal.components-reconnect-retrying .components-rejoining-animation[b-6r1x6szcwe],
+#components-reconnect-modal.components-reconnect-failed[b-6r1x6szcwe],
+#components-reconnect-modal.components-reconnect-failed .components-reconnect-failed-visible[b-6r1x6szcwe] {
+    display: block;
+}
+
+
+#components-reconnect-modal[b-6r1x6szcwe] {
+    background-color: white;
+    width: 20rem;
+    margin: 20vh auto;
+    padding: 2rem;
+    border: 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: display 0.5s allow-discrete, overlay 0.5s allow-discrete;
+    animation: components-reconnect-modal-fadeOutOpacity-b-6r1x6szcwe 0.5s both;
+    &[open]
+
+{
+    animation: components-reconnect-modal-slideUp-b-6r1x6szcwe 1.5s cubic-bezier(.05, .89, .25, 1.02) 0.3s, components-reconnect-modal-fadeInOpacity-b-6r1x6szcwe 0.5s ease-in-out 0.3s;
+    animation-fill-mode: both;
+}
+
+}
+
+#components-reconnect-modal[b-6r1x6szcwe]::backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: components-reconnect-modal-fadeInOpacity-b-6r1x6szcwe 0.5s ease-in-out;
+    opacity: 1;
+}
+
+@keyframes components-reconnect-modal-slideUp-b-6r1x6szcwe {
+    0% {
+        transform: translateY(30px) scale(0.95);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes components-reconnect-modal-fadeInOpacity-b-6r1x6szcwe {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes components-reconnect-modal-fadeOutOpacity-b-6r1x6szcwe {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.components-reconnect-container[b-6r1x6szcwe] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#components-reconnect-modal p[b-6r1x6szcwe] {
+    margin: 0;
+    text-align: center;
+}
+
+#components-reconnect-modal button[b-6r1x6szcwe] {
+    border: 0;
+    background-color: #6b9ed2;
+    color: white;
+    padding: 4px 24px;
+    border-radius: 4px;
+}
+
+    #components-reconnect-modal button:hover[b-6r1x6szcwe] {
+        background-color: #3b6ea2;
+    }
+
+    #components-reconnect-modal button:active[b-6r1x6szcwe] {
+        background-color: #6b9ed2;
+    }
+
+.components-rejoining-animation[b-6r1x6szcwe] {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+    .components-rejoining-animation div[b-6r1x6szcwe] {
+        position: absolute;
+        border: 3px solid #0087ff;
+        opacity: 1;
+        border-radius: 50%;
+        animation: components-rejoining-animation-b-6r1x6szcwe 1.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
+
+        .components-rejoining-animation div:nth-child(2)[b-6r1x6szcwe] {
+            animation-delay: -0.5s;
+        }
+
+@keyframes components-rejoining-animation-b-6r1x6szcwe {
+    0% {
+        top: 40px;
+        left: 40px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    4.9% {
+        top: 40px;
+        left: 40px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    5% {
+        top: 40px;
+        left: 40px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0px;
+        left: 0px;
+        width: 80px;
+        height: 80px;
+        opacity: 0;
+    }
+}
+/* /Components/Pages/Cars.razor.rz.scp.css */
+
+.cars-page[b-5ulb3mis37] {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 36px 24px 60px;
+}
+
+.page-header[b-5ulb3mis37] {
+    margin-bottom: 30px;
+}
+
+    .page-header h1[b-5ulb3mis37] {
+        margin: 0 0 10px;
+        color: #172033;
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .page-header p[b-5ulb3mis37] {
+        margin: 0;
+        color: #64748b;
+        font-size: 15px;
+    }
+
+.loading-message[b-5ulb3mis37],
+.empty-message[b-5ulb3mis37],
+.error-message[b-5ulb3mis37] {
+    padding: 24px;
+    border-radius: 10px;
+    text-align: center;
+    background: #f8fafc;
+    color: #475569;
+}
+
+.error-message[b-5ulb3mis37] {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+@media (max-width: 600px) {
+    .cars-page[b-5ulb3mis37] {
+        padding: 24px 16px 40px;
+    }
+
+    .page-header h1[b-5ulb3mis37] {
+        font-size: 26px;
+    }
+}
+/* /Components/Pages/MyBookings.razor.rz.scp.css */
+
+.bookings-page[b-i6gfsplkpe] {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 35px 24px;
+    color: #1f2937;
+}
+
+.bookings-header[b-i6gfsplkpe] {
+    margin-bottom: 30px;
+}
+
+    .bookings-header h1[b-i6gfsplkpe] {
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .bookings-header p[b-i6gfsplkpe] {
+        color: #6b7280;
+        font-size: 15px;
+    }
+
+.booking-list[b-i6gfsplkpe] {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.booking-card[b-i6gfsplkpe] {
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.booking-top[b-i6gfsplkpe] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.booking-label[b-i6gfsplkpe] {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.booking-top h3[b-i6gfsplkpe] {
+    margin: 5px 0 0;
+    font-size: 16px;
+}
+
+.booking-status[b-i6gfsplkpe] {
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+    .booking-status.active[b-i6gfsplkpe] {
+        background: #dcfce7;
+        color: #15803d;
+    }
+
+    .booking-status.cancelled[b-i6gfsplkpe] {
+        background: #fee2e2;
+        color: #b91c1c;
+    }
+
+.booking-car[b-i6gfsplkpe] {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+    .booking-car img[b-i6gfsplkpe] {
+        width: 160px;
+        height: 105px;
+        object-fit: cover;
+        border-radius: 9px;
+        background: #f3f4f6;
+    }
+
+    .booking-car h2[b-i6gfsplkpe] {
+        margin: 0 0 8px;
+        font-size: 20px;
+    }
+
+    .booking-car p[b-i6gfsplkpe] {
+        margin: 0;
+        color: #6b7280;
+        font-size: 13px;
+    }
+
+.booking-details[b-i6gfsplkpe] {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 20px 0;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.detail-item[b-i6gfsplkpe] {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+    .detail-item span[b-i6gfsplkpe] {
+        color: #6b7280;
+        font-size: 12px;
+    }
+
+    .detail-item strong[b-i6gfsplkpe] {
+        font-size: 14px;
+    }
+
+.booking-price[b-i6gfsplkpe] {
+    color: #2563eb;
+}
+
+.booking-extras[b-i6gfsplkpe] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 9px;
+    padding-top: 18px;
+    font-size: 13px;
+}
+
+.extra-tag[b-i6gfsplkpe] {
+    padding: 6px 11px;
+    border-radius: 20px;
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+.booking-actions[b-i6gfsplkpe] {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.cancel-button[b-i6gfsplkpe] {
+    padding: 10px 17px;
+    border: 1px solid #dc2626;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #dc2626;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .cancel-button:hover:not(:disabled)[b-i6gfsplkpe] {
+        background: #fef2f2;
+    }
+
+    .cancel-button:disabled[b-i6gfsplkpe] {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+.empty-bookings[b-i6gfsplkpe] {
+    padding: 55px 20px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+}
+
+    .empty-bookings h2[b-i6gfsplkpe] {
+        font-size: 21px;
+        margin-bottom: 10px;
+    }
+
+    .empty-bookings p[b-i6gfsplkpe] {
+        color: #6b7280;
+        margin-bottom: 22px;
+    }
+
+.primary-button[b-i6gfsplkpe],
+.secondary-button[b-i6gfsplkpe] {
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.primary-button[b-i6gfsplkpe] {
+    border: 1px solid #2563eb;
+    background: #2563eb;
+    color: white;
+}
+
+    .primary-button:hover[b-i6gfsplkpe] {
+        background: #1d4ed8;
+    }
+
+.secondary-button[b-i6gfsplkpe] {
+    margin-top: 25px;
+    border: 1px solid #d1d5db;
+    background: white;
+    color: #374151;
+}
+
+    .secondary-button:hover[b-i6gfsplkpe] {
+        background: #f3f4f6;
+    }
+
+.bookings-message[b-i6gfsplkpe],
+.bookings-error[b-i6gfsplkpe] {
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.bookings-message[b-i6gfsplkpe] {
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+.bookings-error[b-i6gfsplkpe] {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+@media (max-width: 750px) {
+    .booking-details[b-i6gfsplkpe] {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .bookings-page[b-i6gfsplkpe] {
+        padding: 20px 14px;
+    }
+
+    .booking-card[b-i6gfsplkpe] {
+        padding: 17px;
+    }
+
+    .booking-car[b-i6gfsplkpe] {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+        .booking-car img[b-i6gfsplkpe] {
+            width: 100%;
+            height: 190px;
+        }
+
+    .booking-top h3[b-i6gfsplkpe] {
+        font-size: 13px;
+    }
+
+    .booking-details[b-i6gfsplkpe] {
+        gap: 20px 10px;
+    }
+}
+/* /Components/Pages/Rent.razor.rz.scp.css */
+
+.rent-page[b-ye9gb5d50p] {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 35px 24px;
+    color: #1f2937;
+}
+
+.rent-header[b-ye9gb5d50p] {
+    margin-bottom: 30px;
+}
+
+    .rent-header h1[b-ye9gb5d50p] {
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .rent-header p[b-ye9gb5d50p] {
+        color: #6b7280;
+        font-size: 15px;
+    }
+
+.selected-car[b-ye9gb5d50p] {
+    display: flex;
+    gap: 25px;
+    padding: 22px;
+    margin-bottom: 30px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.car-image[b-ye9gb5d50p] {
+    width: 280px;
+    min-width: 280px;
+    height: 185px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #f3f4f6;
+}
+
+    .car-image img[b-ye9gb5d50p] {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.car-information[b-ye9gb5d50p] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.car-category[b-ye9gb5d50p] {
+    width: fit-content;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.car-information h2[b-ye9gb5d50p] {
+    margin: 0;
+    font-size: 24px;
+}
+
+.car-details[b-ye9gb5d50p] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.daily-price[b-ye9gb5d50p] {
+    color: #2563eb;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+    .daily-price small[b-ye9gb5d50p] {
+        color: #6b7280;
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+.rent-content[b-ye9gb5d50p] {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.rent-section[b-ye9gb5d50p] {
+    padding: 25px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+}
+
+    .rent-section h2[b-ye9gb5d50p] {
+        margin: 0 0 20px;
+        font-size: 20px;
+        font-weight: 650;
+    }
+
+.rent-message[b-ye9gb5d50p],
+.rent-error[b-ye9gb5d50p],
+.rent-warning[b-ye9gb5d50p] {
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.rent-message[b-ye9gb5d50p] {
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+.rent-error[b-ye9gb5d50p] {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.rent-warning[b-ye9gb5d50p] {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.back-button[b-ye9gb5d50p] {
+    margin-top: 25px;
+    padding: 11px 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #374151;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+    .back-button:hover[b-ye9gb5d50p] {
+        background: #f3f4f6;
+    }
+
+@media (max-width: 650px) {
+    .rent-page[b-ye9gb5d50p] {
+        padding: 20px 14px;
+    }
+
+    .selected-car[b-ye9gb5d50p] {
+        flex-direction: column;
+    }
+
+    .car-image[b-ye9gb5d50p] {
+        width: 100%;
+        min-width: 0;
+        height: 200px;
+    }
+
+    .car-information h2[b-ye9gb5d50p] {
+        font-size: 21px;
+    }
+
+    .rent-section[b-ye9gb5d50p] {
+        padding: 18px;
+    }
+}
+/* /Components/Shared/CarList.razor.rz.scp.css */
+
+.car-list[b-8dkc6c1z8d] {
+    width: 100%;
+}
+
+.filters[b-8dkc6c1z8d] {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    padding: 22px;
+    margin-bottom: 22px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.filter-group[b-8dkc6c1z8d] {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+    .filter-group label[b-8dkc6c1z8d] {
+        color: #334155;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .filter-group select[b-8dkc6c1z8d],
+    .filter-group input[b-8dkc6c1z8d] {
+        width: 100%;
+        min-height: 42px;
+        padding: 9px 11px;
+        border: 1px solid #cbd5e1;
+        border-radius: 7px;
+        background: #fff;
+        color: #1e293b;
+        font-size: 14px;
+    }
+
+        .filter-group select:focus[b-8dkc6c1z8d],
+        .filter-group input:focus[b-8dkc6c1z8d] {
+            outline: 2px solid #93c5fd;
+            border-color: #2563eb;
+        }
+
+.clear-filters[b-8dkc6c1z8d] {
+    align-self: end;
+    min-height: 42px;
+    border: 0;
+    border-radius: 7px;
+    background: #e2e8f0;
+    color: #334155;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .clear-filters:hover[b-8dkc6c1z8d] {
+        background: #cbd5e1;
+    }
+
+.result-info[b-8dkc6c1z8d] {
+    margin: 0 0 16px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.car-grid[b-8dkc6c1z8d] {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.car-card[b-8dkc6c1z8d] {
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+    .car-card:hover[b-8dkc6c1z8d] {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+
+.car-image-container[b-8dkc6c1z8d] {
+    position: relative;
+    height: 190px;
+    background: #f1f5f9;
+}
+
+.car-image[b-8dkc6c1z8d] {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-placeholder[b-8dkc6c1z8d] {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+}
+
+.category-badge[b-8dkc6c1z8d] {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: #1e293b;
+    color: #fff;
+    font-size: 12px;
+}
+
+.car-card-content[b-8dkc6c1z8d] {
+    padding: 18px;
+}
+
+    .car-card-content h3[b-8dkc6c1z8d] {
+        margin: 0 0 13px;
+        color: #172033;
+        font-size: 19px;
+    }
+
+.car-details[b-8dkc6c1z8d] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+    .car-details span[b-8dkc6c1z8d] {
+        padding: 5px 8px;
+        border-radius: 5px;
+        background: #f1f5f9;
+        color: #475569;
+        font-size: 12px;
+    }
+
+.car-card-bottom[b-8dkc6c1z8d] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.car-price strong[b-8dkc6c1z8d] {
+    display: block;
+    color: #1d4ed8;
+    font-size: 20px;
+}
+
+.car-price span[b-8dkc6c1z8d] {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.rent-button[b-8dkc6c1z8d] {
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 7px;
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .rent-button:hover:not(:disabled)[b-8dkc6c1z8d] {
+        background: #1d4ed8;
+    }
+
+    .rent-button:disabled[b-8dkc6c1z8d],
+    .rent-button.unavailable[b-8dkc6c1z8d] {
+        background: #cbd5e1;
+        color: #64748b;
+        cursor: not-allowed;
+    }
+
+.no-cars[b-8dkc6c1z8d] {
+    padding: 35px;
+    border-radius: 10px;
+    background: #f8fafc;
+    color: #64748b;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .car-grid[b-8dkc6c1z8d] {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .filters[b-8dkc6c1z8d] {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .car-grid[b-8dkc6c1z8d],
+    .filters[b-8dkc6c1z8d] {
+        grid-template-columns: 1fr;
+    }
+}
+/* /Components/Shared/CustomerForm.razor.rz.scp.css */
+
+.customer-form[b-61ztgijhav] {
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #fff;
+}
+
+    .customer-form h3[b-61ztgijhav] {
+        margin: 0 0 22px;
+        color: #172033;
+        font-size: 21px;
+    }
+
+.customer-form-group[b-61ztgijhav] {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 18px;
+}
+
+    .customer-form-group label[b-61ztgijhav] {
+        color: #334155;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .customer-form-group input[b-61ztgijhav] {
+        width: 100%;
+        min-height: 44px;
+        padding: 10px 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 7px;
+        background: #fff;
+        color: #1e293b;
+        font-size: 14px;
+    }
+
+        .customer-form-group input:focus[b-61ztgijhav] {
+            outline: 2px solid #93c5fd;
+            border-color: #2563eb;
+        }
+
+        .customer-form-group input.invalid[b-61ztgijhav] {
+            border-color: #dc2626;
+        }
+
+    .customer-form-group .validation-message[b-61ztgijhav] {
+        color: #dc2626;
+        font-size: 12px;
+    }
+
+.customer-submit-button[b-61ztgijhav] {
+    width: 100%;
+    min-height: 46px;
+    margin-top: 6px;
+    border: 0;
+    border-radius: 7px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .customer-submit-button:hover[b-61ztgijhav] {
+        background: #1d4ed8;
+    }
+
+    .customer-submit-button:focus-visible[b-61ztgijhav] {
+        outline: 3px solid #93c5fd;
+        outline-offset: 2px;
+    }
+
+@media (max-width: 600px) {
+    .customer-form[b-61ztgijhav] {
+        padding: 18px;
+    }
+}
+/* /Components/Shared/RentalOptions.razor.rz.scp.css */
+
+.rental-options[b-1u9l3q7hwp] {
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #fff;
+}
+
+    .rental-options h3[b-1u9l3q7hwp] {
+        margin: 0 0 22px;
+        color: #172033;
+        font-size: 21px;
+    }
+
+.date-fields[b-1u9l3q7hwp] {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.form-group[b-1u9l3q7hwp] {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+    .form-group label[b-1u9l3q7hwp] {
+        color: #334155;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .form-group input[b-1u9l3q7hwp] {
+        min-height: 44px;
+        padding: 9px 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 7px;
+        color: #1e293b;
+        background: #fff;
+    }
+
+        .form-group input:focus[b-1u9l3q7hwp] {
+            outline: 2px solid #93c5fd;
+            border-color: #2563eb;
+        }
+
+.rental-days[b-1u9l3q7hwp] {
+    margin-top: 18px;
+    padding: 12px 14px;
+    border-radius: 7px;
+    background: #eff6ff;
+    color: #1e40af;
+}
+
+.extras-section[b-1u9l3q7hwp] {
+    margin-top: 28px;
+}
+
+    .extras-section h4[b-1u9l3q7hwp] {
+        margin: 0 0 6px;
+        color: #172033;
+        font-size: 17px;
+    }
+
+    .extras-section > p[b-1u9l3q7hwp] {
+        margin: 0 0 16px;
+        color: #64748b;
+        font-size: 13px;
+    }
+
+.extra-option[b-1u9l3q7hwp] {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-top: 1px solid #e2e8f0;
+    cursor: pointer;
+}
+
+    .extra-option input[b-1u9l3q7hwp] {
+        width: 17px;
+        height: 17px;
+        accent-color: #2563eb;
+    }
+
+.extra-name[b-1u9l3q7hwp] {
+    flex: 1;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.extra-price[b-1u9l3q7hwp] {
+    color: #1d4ed8;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .rental-options[b-1u9l3q7hwp] {
+        padding: 18px;
+    }
+
+    .date-fields[b-1u9l3q7hwp] {
+        grid-template-columns: 1fr;
+    }
+
+    .extra-option[b-1u9l3q7hwp] {
+        flex-wrap: wrap;
+    }
+}
+/* /Components/Shared/RentalSummary.razor.rz.scp.css */
+
+.rental-summary[b-gqn5l72g5r] {
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #fff;
+}
+
+    .rental-summary h3[b-gqn5l72g5r] {
+        margin: 0 0 20px;
+        color: #172033;
+        font-size: 21px;
+    }
+
+.summary-row[b-gqn5l72g5r] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e2e8f0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+    .summary-row strong[b-gqn5l72g5r] {
+        color: #334155;
+        white-space: nowrap;
+    }
+
+.summary-total[b-gqn5l72g5r] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 2px solid #e2e8f0;
+    color: #172033;
+    font-weight: 700;
+}
+
+    .summary-total strong[b-gqn5l72g5r] {
+        color: #1d4ed8;
+        font-size: 24px;
+        white-space: nowrap;
+    }
+
+.summary-note[b-gqn5l72g5r] {
+    margin: 14px 0 0;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.5;
+}

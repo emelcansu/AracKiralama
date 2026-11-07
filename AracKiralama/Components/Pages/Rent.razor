@@ -1,0 +1,268 @@
+﻿@page "/cars/{id}/rent"
+
+@inject CarService CarService
+@inject BookingStateService BookingState
+@inject NavigationManager Navigation
+
+<PageTitle>Araç Kiralama</PageTitle>
+
+<div class="rent-page">
+    @if (isLoading)
+    {
+        <p class="loading-message">Araç bilgileri yükleniyor...</p>
+    }
+    else if (selectedCar is null)
+    {
+        <div class="rent-error">
+            Araç bulunamadı.
+        </div>
+    }
+    else
+    {
+        <h1>Kiralama İşlemi</h1>
+
+        <section class="selected-car">
+            @if (!string.IsNullOrWhiteSpace(selectedCar.ImageUrl))
+            {
+                <img src="@selectedCar.ImageUrl"
+                     alt="@($"{selectedCar.Brand} {selectedCar.Model}")" />
+            }
+
+            <div>
+                <h2>@selectedCar.Brand @selectedCar.Model</h2>
+                <p>@selectedCar.Category · @selectedCar.FuelType · @selectedCar.Transmission</p>
+                <strong>@selectedCar.DailyPrice.ToString("N0") TL / gün</strong>
+            </div>
+        </section>
+
+        @if (!selectedCar.IsAvailable)
+        {
+            <div class="rent-error">
+                Bu araç şu anda müsait değildir. Kiralama işlemi yapılamaz.
+            </div>
+        }
+        else
+        {
+            <div class="rent-layout">
+                <div class="rent-main">
+                    <RentalOptions PickupDate="pickupDate"
+                                   ReturnDate="returnDate"
+                                   ExtraIds="selectedExtraIds"
+                                   OnPickupDateChanged="HandlePickupDateChanged"
+                                   OnReturnDateChanged="HandleReturnDateChanged"
+                                   OnExtraIdsChanged="HandleExtraIdsChanged" />
+
+                    @if (HasDateError)
+                    {
+                        <div class="rent-error">
+                            @DateErrorMessage
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrWhiteSpace(errorMessage))
+                    {
+                        <div class="rent-error">
+                            @errorMessage
+                        </div>
+                    }
+
+                    @if (!HasDateError)
+                    {
+                        <CustomerForm OnSubmit="CreateBooking" />
+                    }
+                </div>
+
+                <aside class="rent-sidebar">
+                    <RentalSummary Car="selectedCar"
+                                   RentalDays="RentalDays"
+                                   ExtraIds="selectedExtraIds"
+                                   TotalAmount="TotalAmount" />
+                </aside>
+            </div>
+        }
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string id { get; set; } = string.Empty;
+
+    private Car? selectedCar;
+
+    private DateTime? pickupDate;
+    private DateTime? returnDate;
+
+    private List<string> selectedExtraIds = new();
+
+    private bool isLoading = true;
+    private string? errorMessage;
+
+    private int RentalDays =>
+        pickupDate.HasValue &&
+        returnDate.HasValue &&
+        returnDate.Value.Date > pickupDate.Value.Date
+            ? (returnDate.Value.Date - pickupDate.Value.Date).Days
+            : 0;
+
+    private bool HasDateError =>
+        !pickupDate.HasValue ||
+        !returnDate.HasValue ||
+        pickupDate.Value.Date < DateTime.Today ||
+        returnDate.Value.Date <= pickupDate.Value.Date;
+
+    private string DateErrorMessage
+    {
+        get
+        {
+            if (!pickupDate.HasValue)
+                return "Teslim alma tarihi seçilmelidir.";
+
+            if (!returnDate.HasValue)
+                return "İade tarihi seçilmelidir.";
+
+            if (pickupDate.Value.Date < DateTime.Today)
+                return "Teslim alma tarihi geçmişte olamaz.";
+
+            if (returnDate.Value.Date <= pickupDate.Value.Date)
+                return "İade tarihi teslim alma tarihinden sonra olmalıdır.";
+
+            return string.Empty;
+        }
+    }
+
+    private decimal ExtraDailyTotal =>
+        (selectedExtraIds.Contains("insurance") ? 250m : 0m) +
+        (selectedExtraIds.Contains("child-seat") ? 75m : 0m) +
+        (selectedExtraIds.Contains("extra-driver") ? 150m : 0m);
+
+    private decimal TotalAmount =>
+        selectedCar is null
+            ? 0m
+            : RentalDays * (selectedCar.DailyPrice + ExtraDailyTotal);
+
+    protected override async Task OnParametersSetAsync()
+    {
+        isLoading = true;
+
+        try
+        {
+            selectedCar = await CarService.GetCarByIdAsync(id);
+
+            if (selectedCar is not null &&
+                BookingState.SelectedCarId == selectedCar.Id)
+            {
+                pickupDate = BookingState.PickupDate;
+                returnDate = BookingState.ReturnDate;
+                selectedExtraIds = BookingState.SelectedExtraIds.ToList();
+            }
+            else
+            {
+                pickupDate = null;
+                returnDate = null;
+                selectedExtraIds = new();
+
+                if (selectedCar is not null)
+                {
+                    BookingState.SetRentalSelection(
+                        selectedCar.Id,
+                        null,
+                        null,
+                        selectedExtraIds
+                    );
+                }
+            }
+        }
+        catch (Exception)
+        {
+            errorMessage = "Araç bilgileri yüklenemedi.";
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private void UpdateRentalState()
+    {
+        if (selectedCar is null)
+            return;
+
+        BookingState.SetRentalSelection(
+            selectedCar.Id,
+            pickupDate,
+            returnDate,
+            selectedExtraIds
+        );
+
+        errorMessage = null;
+    }
+
+    private Task HandlePickupDateChanged(DateTime? date)
+    {
+        pickupDate = date;
+        UpdateRentalState();
+        return Task.CompletedTask;
+    }
+
+    private Task HandleReturnDateChanged(DateTime? date)
+    {
+        returnDate = date;
+        UpdateRentalState();
+        return Task.CompletedTask;
+    }
+
+    private Task HandleExtraIdsChanged(List<string> extraIds)
+    {
+        selectedExtraIds = extraIds;
+        UpdateRentalState();
+        return Task.CompletedTask;
+    }
+
+    private async Task CreateBooking(CustomerForm.CustomerFormData customer)
+    {
+        errorMessage = null;
+
+        if (selectedCar is null || !selectedCar.IsAvailable)
+            return;
+
+        if (HasDateError)
+        {
+            errorMessage = DateErrorMessage;
+            return;
+        }
+
+        var bookings = await BookingState.GetBookingsAsync();
+
+        bool hasOverlap = bookings.Any(booking =>
+            booking.CarId == selectedCar.Id &&
+            !booking.IsCancelled &&
+            pickupDate!.Value.Date < booking.ReturnDate.Date &&
+            returnDate!.Value.Date > booking.PickupDate.Date
+        );
+
+        if (hasOverlap)
+        {
+            errorMessage =
+                "Bu araç seçilen tarihlerde başka bir aktif rezervasyona sahiptir.";
+            return;
+        }
+
+        var booking = new CarBooking
+        {
+            Id = $"CAR-{DateTime.Now.Year}-{Guid.NewGuid().ToString("N")[..6].ToUpper()}",
+            CarId = selectedCar.Id,
+            CustomerName = customer.CustomerName,
+            Email = customer.Email,
+            Phone = customer.Phone,
+            PickupDate = pickupDate!.Value,
+            ReturnDate = returnDate!.Value,
+            ExtraIds = selectedExtraIds.ToList(),
+            TotalAmount = TotalAmount,
+            IsCancelled = false
+        };
+
+        await BookingState.AddBookingAsync(booking);
+
+        Navigation.NavigateTo("/my-bookings");
+    }
+}

@@ -1,0 +1,204 @@
+﻿@page "/my-bookings"
+
+@inject BookingStateService BookingState
+@inject CarService CarService
+
+<PageTitle>Rezervasyonlarım</PageTitle>
+
+<div class="bookings-page">
+    <div class="bookings-header">
+        <h1>Rezervasyonlarım</h1>
+        <p>Oluşturduğunuz araç kiralama kayıtlarını görüntüleyebilirsiniz.</p>
+    </div>
+
+    @if (isLoading)
+    {
+        <p class="loading-message">Rezervasyonlar yükleniyor...</p>
+    }
+    else if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <div class="booking-error">@errorMessage</div>
+    }
+    else if (bookings.Count == 0)
+    {
+        <div class="empty-bookings">
+            <h3>Henüz rezervasyonunuz bulunmuyor.</h3>
+            <a href="/cars">Araçları Görüntüle</a>
+        </div>
+    }
+    else
+    {
+        <div class="booking-list">
+            @foreach (var booking in bookings.OrderByDescending(b => b.PickupDate))
+            {
+                var car = cars.FirstOrDefault(c => c.Id == booking.CarId);
+
+                <article class="booking-card" @key="booking.Id">
+                    <div class="booking-card-header">
+                        <div>
+                            <span class="booking-code">Rezervasyon Kodu</span>
+                            <strong>@booking.Id</strong>
+                        </div>
+
+                        @if (booking.IsCancelled)
+                        {
+                            <span class="booking-status cancelled">İptal Edildi</span>
+                        }
+                        else
+                        {
+                            <span class="booking-status active">Aktif</span>
+                        }
+                    </div>
+
+                    <div class="booking-car">
+                        <div>
+                            <h3>
+                                @(car is null
+                                    ? "Araç bilgisi bulunamadı"
+                                    : $"{car.Brand} {car.Model}")
+                            </h3>
+
+                            @if (car is not null)
+                            {
+                                <p>@car.Category · @car.FuelType · @car.Transmission</p>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="booking-details">
+                        <div>
+                            <span>Müşteri</span>
+                            <strong>@booking.CustomerName</strong>
+                        </div>
+
+                        <div>
+                            <span>E-posta</span>
+                            <strong>@booking.Email</strong>
+                        </div>
+
+                        <div>
+                            <span>Telefon</span>
+                            <strong>@booking.Phone</strong>
+                        </div>
+
+                        <div>
+                            <span>Teslim Alma</span>
+                            <strong>@booking.PickupDate.ToString("dd.MM.yyyy")</strong>
+                        </div>
+
+                        <div>
+                            <span>İade</span>
+                            <strong>@booking.ReturnDate.ToString("dd.MM.yyyy")</strong>
+                        </div>
+
+                        <div>
+                            <span>Kiralama Süresi</span>
+                            <strong>@((booking.ReturnDate.Date - booking.PickupDate.Date).Days) gün</strong>
+                        </div>
+                    </div>
+
+                    <div class="booking-extras">
+                        <span>Ek Hizmetler</span>
+
+                        @if (booking.ExtraIds.Contains("insurance"))
+                        {
+                            <span>Tam Kasko</span>
+                        }
+
+                        @if (booking.ExtraIds.Contains("child-seat"))
+                        {
+                            <span>Çocuk Koltuğu</span>
+                        }
+
+                        @if (booking.ExtraIds.Contains("extra-driver"))
+                        {
+                            <span>Ek Sürücü</span>
+                        }
+
+                        @if (booking.ExtraIds.Count == 0)
+                        {
+                            <span>Ek hizmet seçilmedi.</span>
+                        }
+                    </div>
+
+                    <div class="booking-card-footer">
+                        <div>
+                            <span>Toplam Tutar</span>
+                            <strong>@booking.TotalAmount.ToString("N0") TL</strong>
+                        </div>
+
+                        @if (!booking.IsCancelled &&
+                             booking.PickupDate.Date > DateTime.Today)
+                        {
+                            <button type="button"
+                                    class="cancel-button"
+                                    disabled="@cancellingIds.Contains(booking.Id)"
+                                    @onclick="() => CancelBooking(booking.Id)">
+                                @(cancellingIds.Contains(booking.Id)
+                                    ? "İptal Ediliyor..."
+                                    : "Rezervasyonu İptal Et")
+                            </button>
+                        }
+                    </div>
+                </article>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    private List<CarBooking> bookings = new();
+    private List<Car> cars = new();
+
+    private HashSet<string> cancellingIds = new();
+
+    private bool isLoading = true;
+    private bool hasLoaded;
+
+    private string? errorMessage;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender || hasLoaded)
+            return;
+
+        hasLoaded = true;
+
+        try
+        {
+            bookings = await BookingState.GetBookingsAsync();
+            cars = await CarService.GetCarsAsync();
+        }
+        catch (Exception)
+        {
+            errorMessage = "Rezervasyon bilgileri yüklenirken bir hata oluştu.";
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task CancelBooking(string bookingId)
+    {
+        if (cancellingIds.Contains(bookingId))
+            return;
+
+        cancellingIds.Add(bookingId);
+
+        try
+        {
+            await BookingState.CancelBookingAsync(bookingId);
+            bookings = await BookingState.GetBookingsAsync();
+        }
+        catch (Exception)
+        {
+            errorMessage = "Rezervasyon iptal edilirken bir hata oluştu.";
+        }
+        finally
+        {
+            cancellingIds.Remove(bookingId);
+        }
+    }
+}

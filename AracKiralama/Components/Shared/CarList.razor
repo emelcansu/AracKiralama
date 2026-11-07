@@ -1,0 +1,176 @@
+﻿@using AracKiralama.Models
+
+<div class="car-list">
+    <div class="filters">
+        <div class="filter-group">
+            <label for="brandFilter">Marka</label>
+            <select id="brandFilter" @bind="selectedBrand">
+                <option value="">Tüm Markalar</option>
+                @foreach (var brand in Cars.Select(c => c.Brand).Distinct().OrderBy(x => x))
+                {
+                    <option value="@brand">@brand</option>
+                }
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="categoryFilter">Kategori</label>
+            <select id="categoryFilter" @bind="selectedCategory">
+                <option value="">Tüm Kategoriler</option>
+                @foreach (var category in Cars.Select(c => c.Category).Distinct().OrderBy(x => x))
+                {
+                    <option value="@category">@category</option>
+                }
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="fuelFilter">Yakıt Türü</label>
+            <select id="fuelFilter" @bind="selectedFuel">
+                <option value="">Tüm Yakıt Türleri</option>
+                @foreach (var fuel in Cars.Select(c => c.FuelType).Distinct().OrderBy(x => x))
+                {
+                    <option value="@fuel">@fuel</option>
+                }
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="transmissionFilter">Vites</label>
+            <select id="transmissionFilter" @bind="selectedTransmission">
+                <option value="">Tüm Vites Türleri</option>
+                @foreach (var transmission in Cars.Select(c => c.Transmission).Distinct().OrderBy(x => x))
+                {
+                    <option value="@transmission">@transmission</option>
+                }
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="minPrice">Minimum Günlük Fiyat (TL)</label>
+            <input id="minPrice"
+                   type="number"
+                   min="0"
+                   @bind="minPrice"
+                   @bind:event="oninput"
+                   placeholder="En az" />
+        </div>
+
+        <div class="filter-group">
+            <label for="maxPrice">Maksimum Günlük Fiyat (TL)</label>
+            <input id="maxPrice"
+                   type="number"
+                   min="0"
+                   @bind="maxPrice"
+                   @bind:event="oninput"
+                   placeholder="En fazla" />
+        </div>
+
+        <button type="button" class="clear-filters" @onclick="ClearFilters">
+            Filtreleri Temizle
+        </button>
+    </div>
+
+    <div class="result-info">
+        @FilteredCars.Count() araç listeleniyor.
+    </div>
+
+    @if (!FilteredCars.Any())
+    {
+        <div class="no-cars">
+            Seçilen filtrelere uygun araç bulunamadı.
+        </div>
+    }
+    else
+    {
+        <div class="car-grid">
+            @foreach (var car in FilteredCars)
+            {
+                <article class="car-card" @key="car.Id">
+                    <div class="car-image-container">
+                        @if (!string.IsNullOrWhiteSpace(car.ImageUrl))
+                        {
+                            <img src="@car.ImageUrl"
+                                 alt="@($"{car.Brand} {car.Model}")"
+                                 class="car-image" />
+                        }
+                        else
+                        {
+                            <div class="image-placeholder">Görsel bulunamadı</div>
+                        }
+
+                        <span class="category-badge">@car.Category</span>
+                    </div>
+
+                    <div class="car-card-content">
+                        <h3>@car.Brand @car.Model</h3>
+
+                        <div class="car-details">
+                            <span>@car.FuelType</span>
+                            <span>@car.Transmission</span>
+                            <span>@car.Seats Koltuk</span>
+                        </div>
+
+                        <div class="car-card-bottom">
+                            <div class="car-price">
+                                <strong>@car.DailyPrice.ToString("N0") TL</strong>
+                                <span>/ gün</span>
+                            </div>
+
+                            @if (car.IsAvailable)
+                            {
+                                <button type="button"
+                                        class="rent-button"
+                                        @onclick="() => OnCarSelected.InvokeAsync(car)">
+                                    Kirala
+                                </button>
+                            }
+                            else
+                            {
+                                <button type="button" class="rent-button unavailable" disabled>
+                                    Müsait Değil
+                                </button>
+                            }
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public List<Car> Cars { get; set; } = new();
+
+    [Parameter]
+    public EventCallback<Car> OnCarSelected { get; set; }
+
+    private string selectedBrand = "";
+    private string selectedCategory = "";
+    private string selectedFuel = "";
+    private string selectedTransmission = "";
+
+    private decimal? minPrice;
+    private decimal? maxPrice;
+
+    private IEnumerable<Car> FilteredCars =>
+        Cars.Where(car =>
+            (string.IsNullOrEmpty(selectedBrand) || car.Brand == selectedBrand) &&
+            (string.IsNullOrEmpty(selectedCategory) || car.Category == selectedCategory) &&
+            (string.IsNullOrEmpty(selectedFuel) || car.FuelType == selectedFuel) &&
+            (string.IsNullOrEmpty(selectedTransmission) || car.Transmission == selectedTransmission) &&
+            (!minPrice.HasValue || car.DailyPrice >= minPrice.Value) &&
+            (!maxPrice.HasValue || car.DailyPrice <= maxPrice.Value)
+        );
+
+    private void ClearFilters()
+    {
+        selectedBrand = "";
+        selectedCategory = "";
+        selectedFuel = "";
+        selectedTransmission = "";
+        minPrice = null;
+        maxPrice = null;
+    }
+}

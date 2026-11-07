@@ -1,0 +1,70 @@
+﻿@using System.ComponentModel.DataAnnotations
+
+<div class="customer-form">
+    <h3>Müşteri Bilgileri</h3>
+
+    <EditForm Model="formData" OnValidSubmit="SubmitForm">
+        <DataAnnotationsValidator />
+
+        <div class="customer-form-group">
+            <label for="customerName">Ad Soyad</label>
+            <InputText id="customerName"
+                       @bind-Value="formData.CustomerName"
+                       placeholder="Adınızı ve soyadınızı girin" />
+            <ValidationMessage For="@(() => formData.CustomerName)" />
+        </div>
+
+        <div class="customer-form-group">
+            <label for="customerEmail">E-posta</label>
+            <InputText id="customerEmail"
+                       type="email"
+                       @bind-Value="formData.Email"
+                       placeholder="ornek@mail.com" />
+            <ValidationMessage For="@(() => formData.Email)" />
+        </div>
+
+        <div class="customer-form-group">
+            <label for="customerPhone">Telefon</label>
+            <InputText id="customerPhone"
+                       type="tel"
+                       @bind-Value="formData.Phone"
+                       placeholder="05XXXXXXXXX" />
+            <ValidationMessage For="@(() => formData.Phone)" />
+        </div>
+
+        <button type="submit" class="customer-submit-button">
+            Rezervasyonu Tamamla
+        </button>
+    </EditForm>
+</div>
+
+@code {
+    [Parameter]
+    public EventCallback<CustomerFormData> OnSubmit { get; set; }
+
+    private CustomerFormData formData = new();
+
+    private async Task SubmitForm()
+    {
+        await OnSubmit.InvokeAsync(formData);
+    }
+
+    public class CustomerFormData
+    {
+        [Required(ErrorMessage = "Ad soyad alanı zorunludur.")]
+        [StringLength(100, MinimumLength = 3,
+            ErrorMessage = "Ad soyad 3 ile 100 karakter arasında olmalıdır.")]
+        public string CustomerName { get; set; } = "";
+
+        [Required(ErrorMessage = "E-posta alanı zorunludur.")]
+        [EmailAddress(ErrorMessage = "Geçerli bir e-posta adresi giriniz.")]
+        [StringLength(100, ErrorMessage = "E-posta en fazla 100 karakter olabilir.")]
+        public string Email { get; set; } = "";
+
+        [Required(ErrorMessage = "Telefon alanı zorunludur.")]
+        [Phone(ErrorMessage = "Geçerli bir telefon numarası giriniz.")]
+        [StringLength(20, MinimumLength = 10,
+            ErrorMessage = "Telefon numarası 10 ile 20 karakter arasında olmalıdır.")]
+        public string Phone { get; set; } = "";
+    }
+}

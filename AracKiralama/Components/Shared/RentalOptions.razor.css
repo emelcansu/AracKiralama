@@ -1,0 +1,111 @@
+﻿
+.rental-options {
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #fff;
+}
+
+    .rental-options h3 {
+        margin: 0 0 22px;
+        color: #172033;
+        font-size: 21px;
+    }
+
+.date-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+    .form-group label {
+        color: #334155;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .form-group input {
+        min-height: 44px;
+        padding: 9px 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 7px;
+        color: #1e293b;
+        background: #fff;
+    }
+
+        .form-group input:focus {
+            outline: 2px solid #93c5fd;
+            border-color: #2563eb;
+        }
+
+.rental-days {
+    margin-top: 18px;
+    padding: 12px 14px;
+    border-radius: 7px;
+    background: #eff6ff;
+    color: #1e40af;
+}
+
+.extras-section {
+    margin-top: 28px;
+}
+
+    .extras-section h4 {
+        margin: 0 0 6px;
+        color: #172033;
+        font-size: 17px;
+    }
+
+    .extras-section > p {
+        margin: 0 0 16px;
+        color: #64748b;
+        font-size: 13px;
+    }
+
+.extra-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-top: 1px solid #e2e8f0;
+    cursor: pointer;
+}
+
+    .extra-option input {
+        width: 17px;
+        height: 17px;
+        accent-color: #2563eb;
+    }
+
+.extra-name {
+    flex: 1;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.extra-price {
+    color: #1d4ed8;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .rental-options {
+        padding: 18px;
+    }
+
+    .date-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .extra-option {
+        flex-wrap: wrap;
+    }
+}

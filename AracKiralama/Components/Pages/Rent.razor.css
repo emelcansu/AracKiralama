@@ -1,0 +1,172 @@
+﻿
+.rent-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 35px 24px;
+    color: #1f2937;
+}
+
+.rent-header {
+    margin-bottom: 30px;
+}
+
+    .rent-header h1 {
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .rent-header p {
+        color: #6b7280;
+        font-size: 15px;
+    }
+
+.selected-car {
+    display: flex;
+    gap: 25px;
+    padding: 22px;
+    margin-bottom: 30px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.car-image {
+    width: 280px;
+    min-width: 280px;
+    height: 185px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #f3f4f6;
+}
+
+    .car-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.car-information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.car-category {
+    width: fit-content;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.car-information h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.car-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.daily-price {
+    color: #2563eb;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+    .daily-price small {
+        color: #6b7280;
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+.rent-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.rent-section {
+    padding: 25px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+}
+
+    .rent-section h2 {
+        margin: 0 0 20px;
+        font-size: 20px;
+        font-weight: 650;
+    }
+
+.rent-message,
+.rent-error,
+.rent-warning {
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.rent-message {
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+.rent-error {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.rent-warning {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.back-button {
+    margin-top: 25px;
+    padding: 11px 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #374151;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+    .back-button:hover {
+        background: #f3f4f6;
+    }
+
+@media (max-width: 650px) {
+    .rent-page {
+        padding: 20px 14px;
+    }
+
+    .selected-car {
+        flex-direction: column;
+    }
+
+    .car-image {
+        width: 100%;
+        min-width: 0;
+        height: 200px;
+    }
+
+    .car-information h2 {
+        font-size: 21px;
+    }
+
+    .rent-section {
+        padding: 18px;
+    }
+}

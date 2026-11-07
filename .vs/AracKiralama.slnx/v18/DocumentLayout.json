@@ -1,0 +1,455 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\wwwroot\\cars.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\wwwroot\\cars.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\wwwroot\\images\\corolla.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\wwwroot\\images\\corolla.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\wwwroot\\images\\bmw-320i.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\wwwroot\\images\\bmw-320i.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\services\\bookingstateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\services\\bookingstateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\pages\\cars.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\pages\\cars.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\pages\\rent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\pages\\rent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\pages\\mybookings.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\pages\\mybookings.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\shared\\rentaloptions.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\shared\\rentaloptions.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\services\\carservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\services\\carservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\models\\carbooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\models\\carbooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\models\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\models\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\shared\\customerform.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\shared\\customerform.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\shared\\rentalsummary.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\shared\\rentalsummary.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\shared\\rentalsummary.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\shared\\rentalsummary.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\shared\\rentaloptions.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\shared\\rentaloptions.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\shared\\customerform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\shared\\customerform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\shared\\carlist.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\shared\\carlist.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\shared\\carlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\shared\\carlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\pages\\mybookings.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\pages\\mybookings.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\pages\\rent.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\pages\\rent.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|c:\\users\\emelc\\source\\repos\\arackiralama\\arackiralama\\components\\pages\\cars.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D315F4C7-25D5-A2B6-63E5-B4070E172EB4}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\components\\pages\\cars.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "corolla.jpg",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\wwwroot\\images\\corolla.jpg",
+              "RelativeDocumentMoniker": "AracKiralama\\wwwroot\\images\\corolla.jpg",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\wwwroot\\images\\corolla.jpg",
+              "RelativeToolTip": "AracKiralama\\wwwroot\\images\\corolla.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-11-03T19:11:20.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "bmw-320i.jpg",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\wwwroot\\images\\bmw-320i.jpg",
+              "RelativeDocumentMoniker": "AracKiralama\\wwwroot\\images\\bmw-320i.jpg",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\wwwroot\\images\\bmw-320i.jpg",
+              "RelativeToolTip": "AracKiralama\\wwwroot\\images\\bmw-320i.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-11-03T19:11:18.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainLayout.razor.css",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Layout\\MainLayout.razor.css",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\Layout\\MainLayout.razor.css",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Layout\\MainLayout.razor.css",
+              "RelativeToolTip": "AracKiralama\\Components\\Layout\\MainLayout.razor.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-11-03T19:08:57.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "AracKiralama\\Components\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T19:08:52.007Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Routes.razor",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Routes.razor",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\Routes.razor",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Routes.razor",
+              "RelativeToolTip": "AracKiralama\\Components\\Routes.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T19:03:33.627Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\App.razor",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\App.razor",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\App.razor",
+              "RelativeToolTip": "AracKiralama\\Components\\App.razor",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAqwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T18:59:00.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\_Imports.razor",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\_Imports.razor",
+              "RelativeToolTip": "AracKiralama\\Components\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T18:58:27.719Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "cars.json",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\wwwroot\\cars.json",
+              "RelativeDocumentMoniker": "AracKiralama\\wwwroot\\cars.json",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\wwwroot\\cars.json",
+              "RelativeToolTip": "AracKiralama\\wwwroot\\cars.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-11-03T18:06:12.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BookingStateService.cs",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Services\\BookingStateService.cs",
+              "RelativeDocumentMoniker": "AracKiralama\\Services\\BookingStateService.cs",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Services\\BookingStateService.cs",
+              "RelativeToolTip": "AracKiralama\\Services\\BookingStateService.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAwGwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T18:45:47.153Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Cars.razor",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Pages\\Cars.razor",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\Pages\\Cars.razor",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Pages\\Cars.razor",
+              "RelativeToolTip": "AracKiralama\\Components\\Pages\\Cars.razor",
+              "ViewState": "AgIAACwAAAAAAAAAAAAkwEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T18:32:07.483Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Rent.razor",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Pages\\Rent.razor",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\Pages\\Rent.razor",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Pages\\Rent.razor",
+              "RelativeToolTip": "AracKiralama\\Components\\Pages\\Rent.razor",
+              "ViewState": "AgIAAO4AAAAAAAAAAAAAwAwBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T18:35:33.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MyBookings.razor",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Pages\\MyBookings.razor",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\Pages\\MyBookings.razor",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Pages\\MyBookings.razor",
+              "RelativeToolTip": "AracKiralama\\Components\\Pages\\MyBookings.razor",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAAwMwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T18:36:09.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Program.cs",
+              "RelativeDocumentMoniker": "AracKiralama\\Program.cs",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Program.cs",
+              "RelativeToolTip": "AracKiralama\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T18:45:54.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RentalOptions.razor",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Shared\\RentalOptions.razor",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\Shared\\RentalOptions.razor",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Shared\\RentalOptions.razor",
+              "RelativeToolTip": "AracKiralama\\Components\\Shared\\RentalOptions.razor",
+              "ViewState": "AgIAACMAAAAAAAAAAADwvzIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T18:38:48.325Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CarService.cs",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Services\\CarService.cs",
+              "RelativeDocumentMoniker": "AracKiralama\\Services\\CarService.cs",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Services\\CarService.cs",
+              "RelativeToolTip": "AracKiralama\\Services\\CarService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T18:45:17.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CarBooking.cs",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Models\\CarBooking.cs",
+              "RelativeDocumentMoniker": "AracKiralama\\Models\\CarBooking.cs",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Models\\CarBooking.cs",
+              "RelativeToolTip": "AracKiralama\\Models\\CarBooking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T18:41:58.463Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Car.cs",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Models\\Car.cs",
+              "RelativeDocumentMoniker": "AracKiralama\\Models\\Car.cs",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Models\\Car.cs",
+              "RelativeToolTip": "AracKiralama\\Models\\Car.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T18:41:42.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CustomerForm.razor.css",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Shared\\CustomerForm.razor.css",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\Shared\\CustomerForm.razor.css",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Shared\\CustomerForm.razor.css",
+              "RelativeToolTip": "AracKiralama\\Components\\Shared\\CustomerForm.razor.css",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAowEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-11-03T18:39:31.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "RentalSummary.razor.css",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Shared\\RentalSummary.razor.css",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\Shared\\RentalSummary.razor.css",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Shared\\RentalSummary.razor.css",
+              "RelativeToolTip": "AracKiralama\\Components\\Shared\\RentalSummary.razor.css",
+              "ViewState": "AgIAABYAAAAAAAAAAAAowDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-11-03T18:39:17.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "RentalSummary.razor",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Shared\\RentalSummary.razor",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\Shared\\RentalSummary.razor",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Shared\\RentalSummary.razor",
+              "RelativeToolTip": "AracKiralama\\Components\\Shared\\RentalSummary.razor",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAwEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T18:39:09.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "RentalOptions.razor.css",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Shared\\RentalOptions.razor.css",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\Shared\\RentalOptions.razor.css",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Shared\\RentalOptions.razor.css",
+              "RelativeToolTip": "AracKiralama\\Components\\Shared\\RentalOptions.razor.css",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAowG8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-11-03T18:38:53.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CustomerForm.razor",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Shared\\CustomerForm.razor",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\Shared\\CustomerForm.razor",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Shared\\CustomerForm.razor",
+              "RelativeToolTip": "AracKiralama\\Components\\Shared\\CustomerForm.razor",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAwEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T18:38:40.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CarList.razor.css",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Shared\\CarList.razor.css",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\Shared\\CarList.razor.css",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Shared\\CarList.razor.css",
+              "RelativeToolTip": "AracKiralama\\Components\\Shared\\CarList.razor.css",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAowM4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-11-03T18:38:29.417Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CarList.razor",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Shared\\CarList.razor",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\Shared\\CarList.razor",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Shared\\CarList.razor",
+              "RelativeToolTip": "AracKiralama\\Components\\Shared\\CarList.razor",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAAwLAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T18:38:21.965Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "MyBookings.razor.css",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Pages\\MyBookings.razor.css",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\Pages\\MyBookings.razor.css",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Pages\\MyBookings.razor.css",
+              "RelativeToolTip": "AracKiralama\\Components\\Pages\\MyBookings.razor.css",
+              "ViewState": "AgIAAOoAAAAAAAAAAAAowAoBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-11-03T18:36:17.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Rent.razor.css",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Pages\\Rent.razor.css",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\Pages\\Rent.razor.css",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Pages\\Rent.razor.css",
+              "RelativeToolTip": "AracKiralama\\Components\\Pages\\Rent.razor.css",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAowKwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-11-03T18:35:51.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Cars.razor.css",
+              "DocumentMoniker": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Pages\\Cars.razor.css",
+              "RelativeDocumentMoniker": "AracKiralama\\Components\\Pages\\Cars.razor.css",
+              "ToolTip": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\Components\\Pages\\Cars.razor.css",
+              "RelativeToolTip": "AracKiralama\\Components\\Pages\\Cars.razor.css",
+              "ViewState": "AgIAABAAAAAAAAAAAAAqwDAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-11-03T18:32:40.162Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

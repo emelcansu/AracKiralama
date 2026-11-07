@@ -1,0 +1,206 @@
+
+.car-list[b-8dkc6c1z8d] {
+    width: 100%;
+}
+
+.filters[b-8dkc6c1z8d] {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    padding: 22px;
+    margin-bottom: 22px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.filter-group[b-8dkc6c1z8d] {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+    .filter-group label[b-8dkc6c1z8d] {
+        color: #334155;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .filter-group select[b-8dkc6c1z8d],
+    .filter-group input[b-8dkc6c1z8d] {
+        width: 100%;
+        min-height: 42px;
+        padding: 9px 11px;
+        border: 1px solid #cbd5e1;
+        border-radius: 7px;
+        background: #fff;
+        color: #1e293b;
+        font-size: 14px;
+    }
+
+        .filter-group select:focus[b-8dkc6c1z8d],
+        .filter-group input:focus[b-8dkc6c1z8d] {
+            outline: 2px solid #93c5fd;
+            border-color: #2563eb;
+        }
+
+.clear-filters[b-8dkc6c1z8d] {
+    align-self: end;
+    min-height: 42px;
+    border: 0;
+    border-radius: 7px;
+    background: #e2e8f0;
+    color: #334155;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .clear-filters:hover[b-8dkc6c1z8d] {
+        background: #cbd5e1;
+    }
+
+.result-info[b-8dkc6c1z8d] {
+    margin: 0 0 16px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.car-grid[b-8dkc6c1z8d] {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.car-card[b-8dkc6c1z8d] {
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+    .car-card:hover[b-8dkc6c1z8d] {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+
+.car-image-container[b-8dkc6c1z8d] {
+    position: relative;
+    height: 190px;
+    background: #f1f5f9;
+}
+
+.car-image[b-8dkc6c1z8d] {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-placeholder[b-8dkc6c1z8d] {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+}
+
+.category-badge[b-8dkc6c1z8d] {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: #1e293b;
+    color: #fff;
+    font-size: 12px;
+}
+
+.car-card-content[b-8dkc6c1z8d] {
+    padding: 18px;
+}
+
+    .car-card-content h3[b-8dkc6c1z8d] {
+        margin: 0 0 13px;
+        color: #172033;
+        font-size: 19px;
+    }
+
+.car-details[b-8dkc6c1z8d] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+    .car-details span[b-8dkc6c1z8d] {
+        padding: 5px 8px;
+        border-radius: 5px;
+        background: #f1f5f9;
+        color: #475569;
+        font-size: 12px;
+    }
+
+.car-card-bottom[b-8dkc6c1z8d] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.car-price strong[b-8dkc6c1z8d] {
+    display: block;
+    color: #1d4ed8;
+    font-size: 20px;
+}
+
+.car-price span[b-8dkc6c1z8d] {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.rent-button[b-8dkc6c1z8d] {
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 7px;
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .rent-button:hover:not(:disabled)[b-8dkc6c1z8d] {
+        background: #1d4ed8;
+    }
+
+    .rent-button:disabled[b-8dkc6c1z8d],
+    .rent-button.unavailable[b-8dkc6c1z8d] {
+        background: #cbd5e1;
+        color: #64748b;
+        cursor: not-allowed;
+    }
+
+.no-cars[b-8dkc6c1z8d] {
+    padding: 35px;
+    border-radius: 10px;
+    background: #f8fafc;
+    color: #64748b;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .car-grid[b-8dkc6c1z8d] {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .filters[b-8dkc6c1z8d] {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .car-grid[b-8dkc6c1z8d],
+    .filters[b-8dkc6c1z8d] {
+        grid-template-columns: 1fr;
+    }
+}

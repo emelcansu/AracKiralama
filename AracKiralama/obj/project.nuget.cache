@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Esw2zW4ExVA=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\AracKiralama.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\emelc\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.14\\microsoft.aspnetcore.app.internal.assets.10.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}

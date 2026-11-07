@@ -1,0 +1,70 @@
+﻿@page "/cars"
+
+@inject CarService CarService
+@inject BookingStateService BookingState
+@inject NavigationManager Navigation
+
+<PageTitle>Araç Kiralama</PageTitle>
+
+<div class="cars-page">
+    <div class="page-header">
+        <h1>Araç Kiralama</h1>
+        <p>Size uygun aracı seçin ve kiralama işleminizi başlatın.</p>
+    </div>
+
+    @if (isLoading)
+    {
+        <div class="loading-message">Araçlar yükleniyor...</div>
+    }
+    else if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <div class="error-message">@errorMessage</div>
+    }
+    else if (cars.Count == 0)
+    {
+        <div class="empty-message">Gösterilecek araç bulunamadı.</div>
+    }
+    else
+    {
+        <CarList Cars="cars" OnCarSelected="HandleCarSelected" />
+    }
+</div>
+
+@code {
+    private List<Car> cars = new();
+    private bool isLoading = true;
+    private string? errorMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            cars = await CarService.GetCarsAsync();
+        }
+        catch (Exception)
+        {
+            errorMessage = "Araç bilgileri yüklenirken bir hata oluştu.";
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private void HandleCarSelected(Car selectedCar)
+    {
+        if (!selectedCar.IsAvailable)
+        {
+            return;
+        }
+
+        BookingState.SetRentalSelection(
+            selectedCar.Id,
+            null,
+            null,
+            new List<string>()
+        );
+
+        Navigation.NavigateTo($"/cars/{selectedCar.Id}/rent");
+    }
+}
