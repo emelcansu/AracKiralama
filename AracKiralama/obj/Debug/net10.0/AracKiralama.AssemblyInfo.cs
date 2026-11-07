@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AracKiralama")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bea5756f597f51fd26ae5091dd6c773615d66073")]
 [assembly: System.Reflection.AssemblyProductAttribute("AracKiralama")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AracKiralama")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

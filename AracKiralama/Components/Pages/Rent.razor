@@ -23,9 +23,10 @@
 
         <section class="selected-car">
             @if (!string.IsNullOrWhiteSpace(selectedCar.ImageUrl))
-            {
+            {    <div class="car-image">
                 <img src="@selectedCar.ImageUrl"
                      alt="@($"{selectedCar.Brand} {selectedCar.Model}")" />
+                     </div>
             }
 
             <div>

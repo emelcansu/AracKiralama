@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\AracKiralama.csproj": {}
+    "C:\\Users\\huriy\\OneDrive\\Masaüstü\\ileri web vize\\AracKiralama\\AracKiralama\\AracKiralama.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\AracKiralama.csproj": {
+    "C:\\Users\\huriy\\OneDrive\\Masaüstü\\ileri web vize\\AracKiralama\\AracKiralama\\AracKiralama.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\AracKiralama.csproj",
+        "projectUniqueName": "C:\\Users\\huriy\\OneDrive\\Masaüstü\\ileri web vize\\AracKiralama\\AracKiralama\\AracKiralama.csproj",
         "projectName": "AracKiralama",
-        "projectPath": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\AracKiralama.csproj",
-        "packagesPath": "C:\\Users\\emelc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\obj\\",
+        "projectPath": "C:\\Users\\huriy\\OneDrive\\Masaüstü\\ileri web vize\\AracKiralama\\AracKiralama\\AracKiralama.csproj",
+        "packagesPath": "C:\\Users\\huriy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\huriy\\OneDrive\\Masaüstü\\ileri web vize\\AracKiralama\\AracKiralama\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\emelc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\huriy\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,7 +49,7 @@
             "Microsoft.AspNetCore.App.Internal.Assets": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.14, )",
+              "version": "[10.0.13, )",
               "autoReferenced": true
             }
           },
@@ -78,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.402/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

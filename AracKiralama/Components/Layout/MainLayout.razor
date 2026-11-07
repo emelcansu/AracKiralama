@@ -1,9 +1,32 @@
 ﻿@inherits LayoutComponentBase
 
-@Body
+<div class="app-shell">
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a class="brand" href="/">
+                <span class="brand-mark">&#9650;</span>
+                <span>Doğa<strong>Rent</strong></span>
+            </a>
+
+            <nav class="main-nav" aria-label="Ana menü">
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">Ana Sayfa</NavLink>
+                <NavLink class="nav-link" href="Cars" Match="NavLinkMatch.Prefix">Araçlar</NavLink>
+                <NavLink class="nav-link" href="my-bookings">Rezervasyonlarım</NavLink>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        @Body
+    </main>
+
+    <footer class="site-footer">
+        DoğaRent &middot; Eğitim amaçlı araç kiralama prototipi
+    </footer>
+</div>
 
 <div id="blazor-error-ui" data-nosnippet>
-    An unhandled error has occurred.
-    <a href="." class="reload">Reload</a>
+    Beklenmeyen bir hata oluştu.
+    <a href="." class="reload">Yeniden yükle</a>
     <span class="dismiss">🗙</span>
 </div>

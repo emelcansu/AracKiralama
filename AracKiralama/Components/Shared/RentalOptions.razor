@@ -1,104 +1,130 @@
-﻿
+﻿@using System.Globalization
+
 <div class="rental-options">
-    <h3>Kiralama Bilgileri</h3>
+	<h3>Kiralama Bilgileri</h3>
 
-    <div class="date-fields">
-        <div class="form-group">
-            <label for="pickupDate">Teslim Alma Tarihi</label>
-            <input id="pickupDate"
+	<div class="date-fields">
+		<div class="form-group">
+			<label for="pickupDate">Teslim Alma Tarihi</label>
+			<input id="pickupDate"
                    type="date"
-                   min="@DateTime.Today.ToString("yyyy-MM-dd")"
-                   value="@PickupDate?.ToString("yyyy-MM-dd")"
+                   min="@TodayValue"
+                   value="@PickupValue"
                    @onchange="HandlePickupDateChanged" />
-        </div>
+		</div>
 
-        <div class="form-group">
-            <label for="returnDate">İade Tarihi</label>
-            <input id="returnDate"
+		<div class="form-group">
+			<label for="returnDate">İade Tarihi</label>
+			<input id="returnDate"
                    type="date"
-                   min="@ReturnMinDate"
-                   value="@ReturnDate?.ToString("yyyy-MM-dd")"
+                   min="@ReturnMinValue"
+                   value="@ReturnValue"
                    @onchange="HandleReturnDateChanged" />
-        </div>
-    </div>
+		</div>
+	</div>
 
-    @if (PickupDate.HasValue && ReturnDate.HasValue &&
-         ReturnDate.Value.Date > PickupDate.Value.Date)
-    {
-        <div class="rental-days">
-            Kiralama Süresi:
-            <strong>@( (ReturnDate.Value.Date - PickupDate.Value.Date).Days ) gün</strong>
-        </div>
-    }
+	@if (RentalDays > 0)
+	{
+	<div class="rental-days">
+		Kiralama Süresi: <strong>@RentalDays gün</strong>
+	</div>
+	}
 
-    <div class="extras-section">
-        <h4>Ek Hizmetler</h4>
-        <p>İhtiyacınıza uygun ek hizmetleri seçebilirsiniz.</p>
+	<div class="extras-section">
+		<h4>Ek Hizmetler</h4>
+		<p>İhtiyacınıza uygun ek hizmetleri seçebilirsiniz.</p>
 
-        <label class="extra-option">
+		@foreach (var extra in Extras)
+		{
+		var isSelected = ExtraIds.Contains(extra.Id);
 
-            <input type="checkbox"
-                   checked="@ExtraIds.Contains("insurance")"
-                   @onchange='e => HandleExtraChanged("insurance", e)' />
-
-            <input type="checkbox"
-                   checked="@ExtraIds.Contains("child-seat")"
-                   @onchange='e => HandleExtraChanged("child-seat", e)' />
-
-            <input type="checkbox"
-                   checked="@ExtraIds.Contains("extra-driver")"
-                   @onchange='e => HandleExtraChanged("extra-driver", e)' />
-
-        </label>
-    </div>
+		<label class="extra-option">
+			<input type="checkbox"
+				   checked="@isSelected"
+				   @onchange="e => HandleExtraChanged(extra.Id, e)" />
+			<span>@extra.Name (+@extra.Price TL / gün)</span>
+		</label>
+		}
+	</div>
 </div>
 
 @code {
-    [Parameter]
-    public DateTime? PickupDate { get; set; }
+[Parameter]
+public DateTime? PickupDate { get; set; }
 
-    [Parameter]
-    public DateTime? ReturnDate { get; set; }
+[Parameter]
+public DateTime? ReturnDate { get; set; }
 
-    [Parameter]
-    public List<string> ExtraIds { get; set; } = new();
+[Parameter]
+public List<string>
+	ExtraIds { get; set; } = new();
 
-    [Parameter]
-    public EventCallback<DateTime?> OnPickupDateChanged { get; set; }
+	[Parameter]
+	public EventCallback<DateTime?>
+		OnPickupDateChanged { get; set; }
 
-    [Parameter]
-    public EventCallback<DateTime?> OnReturnDateChanged { get; set; }
+		[Parameter]
+		public EventCallback<DateTime?>
+			OnReturnDateChanged { get; set; }
 
-    [Parameter]
-    public EventCallback<List<string>> OnExtraIdsChanged { get; set; }
+			[Parameter]
+			public EventCallback<List<string>
+				> OnExtraIdsChanged { get; set; }
 
-    private string ReturnMinDate =>
-        PickupDate?.Date.ToString("yyyy-MM-dd")
-        ?? DateTime.Today.ToString("yyyy-MM-dd");
+				private const string DateFormat = "yyyy-MM-dd";
 
-    private async Task HandlePickupDateChanged(ChangeEventArgs e)
+				private record ExtraItem(string Id, string Name, int Price);
+
+				private static readonly List<ExtraItem> Extras = new()
     {
-        if (DateTime.TryParse(e.Value?.ToString(), out var date))
+        new ExtraItem("insurance", "Tam Sigorta", 250),
+        new ExtraItem("child-seat", "Çocuk Koltuğu", 75),
+        new ExtraItem("extra-driver", "Ek Sürücü", 150)
+    };
+
+    private string TodayValue =>
+        DateTime.Today.ToString(DateFormat, CultureInfo.InvariantCulture);
+
+    private string PickupValue =>
+        PickupDate.HasValue
+            ? PickupDate.Value.ToString(DateFormat, CultureInfo.InvariantCulture)
+            : string.Empty;
+
+    private string ReturnValue =>
+        ReturnDate.HasValue
+            ? ReturnDate.Value.ToString(DateFormat, CultureInfo.InvariantCulture)
+            : string.Empty;
+
+    private string ReturnMinValue =>
+        (PickupDate ?? DateTime.Today).Date.AddDays(1)
+            .ToString(DateFormat, CultureInfo.InvariantCulture);
+
+    private int RentalDays =>
+        PickupDate.HasValue && ReturnDate.HasValue &&
+        ReturnDate.Value.Date > PickupDate.Value.Date
+            ? (ReturnDate.Value.Date - PickupDate.Value.Date).Days
+            : 0;
+
+    private static DateTime? ParseDate(object? value)
+    {
+        if (DateTime.TryParseExact(
+                value?.ToString(),
+                DateFormat,
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
+                out var date))
         {
-            await OnPickupDateChanged.InvokeAsync(date);
+            return date;
         }
-        else
-        {
-            await OnPickupDateChanged.InvokeAsync(null);
-        }
+
+        return null;
     }
 
-    private async Task HandleReturnDateChanged(ChangeEventArgs e)
-    {
-        if (DateTime.TryParse(e.Value?.ToString(), out var date))
-        {
-            await OnReturnDateChanged.InvokeAsync(date);
-        }
-        else
-        {
-            await OnReturnDateChanged.InvokeAsync(null);
-        }
-    }
+    private Task HandlePickupDateChanged(ChangeEventArgs e) =>
+        OnPickupDateChanged.InvokeAsync(ParseDate(e.Value));
+
+    private Task HandleReturnDateChanged(ChangeEventArgs e) =>
+        OnReturnDateChanged.InvokeAsync(ParseDate(e.Value));
 
     private async Task HandleExtraChanged(string extraId, ChangeEventArgs e)
     {

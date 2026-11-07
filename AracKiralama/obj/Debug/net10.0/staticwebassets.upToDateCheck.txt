@@ -13,10 +13,10 @@ wwwroot\images\sportage.jpg
 wwwroot\images\superb.jpg
 wwwroot\images\tucson.jpg
 Components\Layout\ReconnectModal.razor.js
-C:\Users\emelc\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.10\build\..\_framework\blazor.web.js
-C:\Users\emelc\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.10\build\..\_framework\blazor.server.js
-C:\Users\emelc\source\repos\AracKiralama\AracKiralama\wwwroot\app.css
-C:\Users\emelc\source\repos\AracKiralama\AracKiralama\Components\Layout\ReconnectModal.razor.js
-C:\Users\emelc\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.10\_framework\blazor.web.js
-C:\Users\emelc\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.10\_framework\blazor.server.js
-C:\Users\emelc\source\repos\AracKiralama\AracKiralama\wwwroot\cars.json
+C:\Users\huriy\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.13\build\..\_framework\blazor.web.js
+C:\Users\huriy\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.13\build\..\_framework\blazor.server.js
+C:\Users\huriy\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.13\_framework\blazor.server.js
+C:\Users\huriy\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.13\_framework\blazor.web.js
+C:\Users\huriy\OneDrive\Masaüstü\ileri web vize\AracKiralama\AracKiralama\Components\Layout\ReconnectModal.razor.js
+C:\Users\huriy\OneDrive\Masaüstü\ileri web vize\AracKiralama\AracKiralama\wwwroot\cars.json
+C:\Users\huriy\OneDrive\Masaüstü\ileri web vize\AracKiralama\AracKiralama\wwwroot\app.css

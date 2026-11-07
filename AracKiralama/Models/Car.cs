@@ -22,5 +22,6 @@ namespace AracKiralama.Models
         public string? ImageUrl { get; set; }
 
         public bool IsAvailable { get; set; }
+        
     }
 }

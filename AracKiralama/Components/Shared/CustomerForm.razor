@@ -3,7 +3,7 @@
 <div class="customer-form">
     <h3>Müşteri Bilgileri</h3>
 
-    <EditForm Model="formData" OnValidSubmit="SubmitForm">
+    <EditForm Model="formData" OnValidSubmit="SubmitForm" novalidate>
         <DataAnnotationsValidator />
 
         <div class="customer-form-group">
@@ -17,7 +17,6 @@
         <div class="customer-form-group">
             <label for="customerEmail">E-posta</label>
             <InputText id="customerEmail"
-                       type="email"
                        @bind-Value="formData.Email"
                        placeholder="ornek@mail.com" />
             <ValidationMessage For="@(() => formData.Email)" />
@@ -26,13 +25,14 @@
         <div class="customer-form-group">
             <label for="customerPhone">Telefon</label>
             <InputText id="customerPhone"
-                       type="tel"
                        @bind-Value="formData.Phone"
+                       maxlength="11"
+                       inputmode="numeric"
                        placeholder="05XXXXXXXXX" />
             <ValidationMessage For="@(() => formData.Phone)" />
         </div>
 
-        <button type="submit" class="customer-submit-button">
+        <button type="submit" class="customer-submit-button" disabled="@isSubmitting">
             Rezervasyonu Tamamla
         </button>
     </EditForm>
@@ -44,9 +44,25 @@
 
     private CustomerFormData formData = new();
 
+    private bool isSubmitting;
+
     private async Task SubmitForm()
     {
-        await OnSubmit.InvokeAsync(formData);
+        if (isSubmitting)
+        {
+            return;
+        }
+
+        isSubmitting = true;
+
+        try
+        {
+            await OnSubmit.InvokeAsync(formData);
+        }
+        finally
+        {
+            isSubmitting = false;
+        }
     }
 
     public class CustomerFormData
@@ -58,13 +74,17 @@
 
         [Required(ErrorMessage = "E-posta alanı zorunludur.")]
         [EmailAddress(ErrorMessage = "Geçerli bir e-posta adresi giriniz.")]
+        [RegularExpression(@"^[A-Za-z0-9._%+\-]+@[A-Za-z0-9\-]+(\.[A-Za-z0-9\-]+)*\.[A-Za-z]{2,}$",
+            ErrorMessage = "E-posta ornek@alanadi.com biçiminde olmalıdır.")]
         [StringLength(100, ErrorMessage = "E-posta en fazla 100 karakter olabilir.")]
         public string Email { get; set; } = "";
 
         [Required(ErrorMessage = "Telefon alanı zorunludur.")]
         [Phone(ErrorMessage = "Geçerli bir telefon numarası giriniz.")]
-        [StringLength(20, MinimumLength = 10,
-            ErrorMessage = "Telefon numarası 10 ile 20 karakter arasında olmalıdır.")]
+        [RegularExpression(@"^0[0-9]*$",
+            ErrorMessage = "Telefon numarası 0 ile başlamalı ve sadece rakam içermelidir.")]
+        [StringLength(11, MinimumLength = 11,
+            ErrorMessage = "Telefon numarası 11 haneli olmalıdır (örn. 05XXXXXXXXX).")]
         public string Phone { get; set; } = "";
     }
 }

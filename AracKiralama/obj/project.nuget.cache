@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Esw2zW4ExVA=",
+  "dgSpecHash": "v5IJphmrZqk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\emelc\\source\\repos\\AracKiralama\\AracKiralama\\AracKiralama.csproj",
+  "projectFilePath": "C:\\Users\\huriy\\OneDrive\\Masaüstü\\ileri web vize\\AracKiralama\\AracKiralama\\AracKiralama.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\emelc\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.14\\microsoft.aspnetcore.app.internal.assets.10.0.14.nupkg.sha512"
+    "C:\\Users\\huriy\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.13\\microsoft.aspnetcore.app.internal.assets.10.0.13.nupkg.sha512"
   ],
   "logs": []
 }

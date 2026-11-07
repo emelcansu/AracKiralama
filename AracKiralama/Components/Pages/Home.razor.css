@@ -1,0 +1,142 @@
+.home-hero {
+    padding: 100px 24px 110px;
+    color: #ffffff;
+    background: linear-gradient(180deg, rgba(11, 31, 38, 0.45) 0%, rgba(11, 31, 38, 0.85) 100%), url('/images/hero.jpg') center / cover no-repeat, linear-gradient(135deg, #0b1f26 0%, #1d5a45 60%, #3f7a6a 100%);
+}
+
+.home-hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.home-eyebrow,
+.home-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.home-eyebrow {
+    color: #d9b25f;
+}
+
+    .home-eyebrow::before,
+    .home-label::before {
+        content: "";
+        width: 40px;
+        height: 2px;
+        background: #d9b25f;
+    }
+
+.home-label {
+    color: #2f6f4e;
+}
+
+.home-hero h1 {
+    margin: 16px 0 14px;
+    max-width: 16ch;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.home-hero p {
+    max-width: 52ch;
+    margin: 0 0 30px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.1rem;
+}
+
+.home-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.home-button {
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+}
+
+    .home-button:hover {
+        transform: translateY(-2px);
+    }
+
+    .home-button.primary {
+        background: #d9b25f;
+        color: #0b1f26;
+    }
+
+    .home-button.secondary {
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: #ffffff;
+    }
+
+        .home-button.secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+.home-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 56px 24px 8px;
+}
+
+    .home-section h2 {
+        margin: 10px 0 24px;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 2rem;
+        color: #0b1f26;
+    }
+
+.home-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+}
+
+.home-card {
+    padding: 26px;
+    background: #ffffff;
+    border: 1px solid #dbe5e1;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(11, 31, 38, 0.07);
+}
+
+    .home-card h3 {
+        margin: 0 0 8px;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 1.3rem;
+        color: #0b1f26;
+    }
+
+    .home-card p {
+        margin: 0;
+        color: #5d6f76;
+    }
+
+.home-number {
+    display: block;
+    margin-bottom: 6px;
+    font-family: Georgia, serif;
+    font-size: 2.4rem;
+    color: #cfe0d6;
+}
+
+@media (max-width: 600px) {
+    .home-hero {
+        padding: 64px 16px 72px;
+    }
+
+    .home-section {
+        padding: 40px 16px 0;
+    }
+}
