@@ -23,10 +23,11 @@
 
         <section class="selected-car">
             @if (!string.IsNullOrWhiteSpace(selectedCar.ImageUrl))
-            {    <div class="car-image">
-                <img src="@selectedCar.ImageUrl"
-                     alt="@($"{selectedCar.Brand} {selectedCar.Model}")" />
-                     </div>
+            {
+                <div class="car-image">
+                    <img src="@selectedCar.ImageUrl"
+                         alt="@($"{selectedCar.Brand} {selectedCar.Model}")" />
+                </div>
             }
 
             <div>
@@ -49,6 +50,7 @@
                     <RentalOptions PickupDate="pickupDate"
                                    ReturnDate="returnDate"
                                    ExtraIds="selectedExtraIds"
+                                   ReservedRanges="reservedRanges"
                                    OnPickupDateChanged="HandlePickupDateChanged"
                                    OnReturnDateChanged="HandleReturnDateChanged"
                                    OnExtraIdsChanged="HandleExtraIdsChanged" />
@@ -95,6 +97,10 @@
 
     private List<string> selectedExtraIds = new();
 
+    private List<RentalOptions.ReservedDateRange> reservedRanges = new();
+
+    private const int MaxRentalDays = 365;
+
     private bool isLoading = true;
     private string? errorMessage;
 
@@ -109,7 +115,9 @@
         !pickupDate.HasValue ||
         !returnDate.HasValue ||
         pickupDate.Value.Date < DateTime.Today ||
-        returnDate.Value.Date <= pickupDate.Value.Date;
+        returnDate.Value.Date <= pickupDate.Value.Date ||
+        RentalDays > MaxRentalDays ||
+        HasReservedDate();
 
     private string DateErrorMessage
     {
@@ -126,6 +134,12 @@
 
             if (returnDate.Value.Date <= pickupDate.Value.Date)
                 return "İade tarihi teslim alma tarihinden sonra olmalıdır.";
+
+            if (RentalDays > MaxRentalDays)
+                return $"En fazla {MaxRentalDays} gün (1 yıl) kiralama yapılabilir.";
+
+            if (HasReservedDate())
+                return "Seçilen tarih aralığında başka bir aktif rezervasyon bulunmaktadır.";
 
             return string.Empty;
         }
@@ -172,6 +186,19 @@
                     );
                 }
             }
+
+            var bookings = await BookingState.GetBookingsAsync();
+
+            reservedRanges = bookings
+                .Where(booking =>
+                    booking.CarId == id &&
+                    !booking.IsCancelled)
+                .Select(booking => new RentalOptions.ReservedDateRange
+                {
+                    StartDate = booking.PickupDate.Date,
+                    EndDate = booking.ReturnDate.Date
+                })
+                .ToList();
         }
         catch (Exception)
         {
@@ -181,6 +208,16 @@
         {
             isLoading = false;
         }
+    }
+
+    private bool HasReservedDate()
+    {
+        if (!pickupDate.HasValue || !returnDate.HasValue)
+            return false;
+
+        return reservedRanges.Any(range =>
+            pickupDate.Value.Date < range.EndDate.Date &&
+            returnDate.Value.Date > range.StartDate.Date);
     }
 
     private void UpdateRentalState()
@@ -201,7 +238,16 @@
     private Task HandlePickupDateChanged(DateTime? date)
     {
         pickupDate = date;
+
+        if (returnDate.HasValue &&
+            pickupDate.HasValue &&
+            returnDate.Value.Date <= pickupDate.Value.Date)
+        {
+            returnDate = null;
+        }
+
         UpdateRentalState();
+
         return Task.CompletedTask;
     }
 
@@ -209,6 +255,7 @@
     {
         returnDate = date;
         UpdateRentalState();
+
         return Task.CompletedTask;
     }
 
@@ -216,6 +263,7 @@
     {
         selectedExtraIds = extraIds;
         UpdateRentalState();
+
         return Task.CompletedTask;
     }
 
@@ -244,7 +292,7 @@
         if (hasOverlap)
         {
             errorMessage =
-                "Bu araç seçilen tarihlerde başka bir aktif rezervasyona sahiptir.";
+                "Bu araç seçilen tarihlerde başka bir aktif rezervasyona sahiptir. Lütfen uygun tarihleri seçiniz.";
             return;
         }
 

@@ -12,6 +12,40 @@
         font-size: 21px;
     }
 
+.reserved-info {
+    margin-bottom: 18px;
+    padding: 14px;
+    border-radius: 7px;
+    background: #fff7ed;
+    color: #9a3412;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+    .reserved-info p {
+        margin: 6px 0 0;
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+.reserved-ranges {
+    margin-bottom: 18px;
+    padding: 14px;
+    border: 1px solid #fecaca;
+    border-radius: 7px;
+    color: #991b1b;
+    font-size: 13px;
+}
+
+    .reserved-ranges strong {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .reserved-ranges div {
+        margin-top: 5px;
+    }
+
 .date-fields {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -50,6 +84,15 @@
     border-radius: 7px;
     background: #eff6ff;
     color: #1e40af;
+}
+
+.date-error {
+    margin-top: 14px;
+    padding: 12px;
+    border-radius: 7px;
+    background: #fef2f2;
+    color: #b91c1c;
+    font-size: 13px;
 }
 
 .extras-section {

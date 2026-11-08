@@ -1,81 +1,119 @@
 ﻿@using System.Globalization
 
 <div class="rental-options">
-	<h3>Kiralama Bilgileri</h3>
+    <h3>Kiralama Bilgileri</h3>
 
-	<div class="date-fields">
-		<div class="form-group">
-			<label for="pickupDate">Teslim Alma Tarihi</label>
-			<input id="pickupDate"
+    <div class="reserved-info">
+        Rezerve edilmiş tarihler seçilememektedir.
+        <p>Takvimde yalnızca uygun tarihler seçilebilir. En fazla 1 yıl kiralama yapılabilir.</p>
+    </div>
+
+    @if (ReservedRanges.Any())
+    {
+        <div class="reserved-ranges">
+            <strong>Rezerve Edilmiş Tarihler</strong>
+
+            @foreach (var range in ReservedRanges)
+            {
+                <div>
+                    @range.StartDate.ToString("dd.MM.yyyy") -
+                    @range.EndDate.ToString("dd.MM.yyyy")
+                </div>
+            }
+        </div>
+    }
+
+    <div class="date-fields">
+        <div class="form-group">
+            <label for="pickupDate">Teslim Alma Tarihi</label>
+
+            <input id="pickupDate"
                    type="date"
                    min="@TodayValue"
                    value="@PickupValue"
                    @onchange="HandlePickupDateChanged" />
-		</div>
+        </div>
 
-		<div class="form-group">
-			<label for="returnDate">İade Tarihi</label>
-			<input id="returnDate"
+        <div class="form-group">
+            <label for="returnDate">İade Tarihi</label>
+
+            <input id="returnDate"
                    type="date"
                    min="@ReturnMinValue"
                    value="@ReturnValue"
                    @onchange="HandleReturnDateChanged" />
-		</div>
-	</div>
+        </div>
+    </div>
 
-	@if (RentalDays > 0)
-	{
-	<div class="rental-days">
-		Kiralama Süresi: <strong>@RentalDays gün</strong>
-	</div>
-	}
+    @if (RentalDays > 0)
+    {
+        <div class="rental-days">
+            Kiralama Süresi: <strong>@RentalDays gün</strong>
+        </div>
+    }
 
-	<div class="extras-section">
-		<h4>Ek Hizmetler</h4>
-		<p>İhtiyacınıza uygun ek hizmetleri seçebilirsiniz.</p>
+    @if (!string.IsNullOrWhiteSpace(DateError))
+    {
+        <div class="date-error">
+            @DateError
+        </div>
+    }
 
-		@foreach (var extra in Extras)
-		{
-		var isSelected = ExtraIds.Contains(extra.Id);
+    <div class="extras-section">
+        <h4>Ek Hizmetler</h4>
+        <p>İhtiyacınıza uygun ek hizmetleri seçebilirsiniz.</p>
 
-		<label class="extra-option">
-			<input type="checkbox"
-				   checked="@isSelected"
-				   @onchange="e => HandleExtraChanged(extra.Id, e)" />
-			<span>@extra.Name (+@extra.Price TL / gün)</span>
-		</label>
-		}
-	</div>
+        @foreach (var extra in Extras)
+        {
+            var isSelected = ExtraIds.Contains(extra.Id);
+
+            <label class="extra-option">
+                <input type="checkbox"
+                       checked="@isSelected"
+                       @onchange="e => HandleExtraChanged(extra.Id, e)" />
+
+                <span>@extra.Name (+@extra.Price TL / gün)</span>
+            </label>
+        }
+    </div>
 </div>
 
 @code {
-[Parameter]
-public DateTime? PickupDate { get; set; }
+    [Parameter]
+    public DateTime? PickupDate { get; set; }
 
-[Parameter]
-public DateTime? ReturnDate { get; set; }
+    [Parameter]
+    public DateTime? ReturnDate { get; set; }
 
-[Parameter]
-public List<string>
-	ExtraIds { get; set; } = new();
+    [Parameter]
+    public List<string> ExtraIds { get; set; } = new();
 
-	[Parameter]
-	public EventCallback<DateTime?>
-		OnPickupDateChanged { get; set; }
+    [Parameter]
+    public EventCallback<DateTime?> OnPickupDateChanged { get; set; }
 
-		[Parameter]
-		public EventCallback<DateTime?>
-			OnReturnDateChanged { get; set; }
+    [Parameter]
+    public EventCallback<DateTime?> OnReturnDateChanged { get; set; }
 
-			[Parameter]
-			public EventCallback<List<string>
-				> OnExtraIdsChanged { get; set; }
+    [Parameter]
+    public EventCallback<List<string>> OnExtraIdsChanged { get; set; }
 
-				private const string DateFormat = "yyyy-MM-dd";
+    [Parameter]
+    public List<ReservedDateRange> ReservedRanges { get; set; } = new();
 
-				private record ExtraItem(string Id, string Name, int Price);
+    private const string DateFormat = "yyyy-MM-dd";
+    private const int MaxRentalDays = 365;
 
-				private static readonly List<ExtraItem> Extras = new()
+    private string DateError = string.Empty;
+
+    private record ExtraItem(string Id, string Name, int Price);
+
+    public class ReservedDateRange
+    {
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+    }
+
+    private static readonly List<ExtraItem> Extras = new()
     {
         new ExtraItem("insurance", "Tam Sigorta", 250),
         new ExtraItem("child-seat", "Çocuk Koltuğu", 75),
@@ -120,11 +158,87 @@ public List<string>
         return null;
     }
 
-    private Task HandlePickupDateChanged(ChangeEventArgs e) =>
-        OnPickupDateChanged.InvokeAsync(ParseDate(e.Value));
+    private async Task HandlePickupDateChanged(ChangeEventArgs e)
+    {
+        var selectedDate = ParseDate(e.Value);
 
-    private Task HandleReturnDateChanged(ChangeEventArgs e) =>
-        OnReturnDateChanged.InvokeAsync(ParseDate(e.Value));
+        if (!selectedDate.HasValue)
+        {
+            DateError = "Geçerli bir teslim alma tarihi seçiniz.";
+            return;
+        }
+
+        if (selectedDate.Value.Date < DateTime.Today)
+        {
+            DateError = "Geçmiş bir tarih seçilemez.";
+            return;
+        }
+
+        if (IsReserved(selectedDate.Value))
+        {
+            DateError = "Seçilen teslim alma tarihi rezerve edilmiştir.";
+            return;
+        }
+
+        DateError = string.Empty;
+
+        await OnPickupDateChanged.InvokeAsync(selectedDate);
+
+        if (ReturnDate.HasValue &&
+            ReturnDate.Value.Date <= selectedDate.Value.Date)
+        {
+            await OnReturnDateChanged.InvokeAsync(null);
+        }
+    }
+
+    private async Task HandleReturnDateChanged(ChangeEventArgs e)
+    {
+        var selectedDate = ParseDate(e.Value);
+
+        if (!selectedDate.HasValue || !PickupDate.HasValue)
+        {
+            DateError = "Önce geçerli bir teslim alma tarihi seçiniz.";
+            return;
+        }
+
+        if (selectedDate.Value.Date <= PickupDate.Value.Date)
+        {
+            DateError = "İade tarihi, teslim alma tarihinden sonra olmalıdır.";
+            return;
+        }
+
+        var days = (selectedDate.Value.Date - PickupDate.Value.Date).Days;
+
+        if (days > MaxRentalDays)
+        {
+            DateError = $"En fazla {MaxRentalDays} gün (1 yıl) kiralama yapılabilir.";
+            return;
+        }
+
+        if (HasReservedDate(PickupDate.Value, selectedDate.Value))
+        {
+            DateError = "Seçilen tarih aralığında rezerve edilmiş gün bulunmaktadır.";
+            return;
+        }
+
+        DateError = string.Empty;
+
+        await OnReturnDateChanged.InvokeAsync(selectedDate);
+    }
+
+    private bool IsReserved(DateTime date)
+    {
+        return ReservedRanges.Any(range =>
+            date.Date >= range.StartDate.Date &&
+            date.Date < range.EndDate.Date);
+    }
+
+    private bool HasReservedDate(DateTime startDate, DateTime endDate)
+    {
+        return ReservedRanges.Any(range =>
+            startDate.Date < range.EndDate.Date &&
+            endDate.Date > range.StartDate.Date);
+    }
 
     private async Task HandleExtraChanged(string extraId, ChangeEventArgs e)
     {
